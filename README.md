@@ -1,8 +1,8 @@
 # Tic-Tac-Toe
-#### Video Demo: https://youtu.be/iTPSmOSNgsU
+
 #### Description:
 
-### Final project done as a part of the CS50P course by Harvard
+    Final project done as a part of the CS50P course by Harvard
 
 - Initially to play this game, run:
 ```
