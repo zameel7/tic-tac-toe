@@ -13,7 +13,7 @@
 - This is a minimal tic-tac-toe game
 
 - This can be played by 2 players
-> (This does not have a single player mode now)
+    > (This does not have a single player mode now)
 
 ### Working of game
 __________________________
