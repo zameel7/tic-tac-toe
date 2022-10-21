@@ -184,8 +184,7 @@ def player_choice(board):
 
 def replay():
     """ ask user if they want to play again """
-    replay=input('Would you like to play again by changing the markers? (Y 
-or N): ')
+    replay=input('Would you like to play again by changing the markers? (Y or N): ')
     if replay.upper() == 'Y':
         return True
     else:
