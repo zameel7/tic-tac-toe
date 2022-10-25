@@ -2,7 +2,7 @@ from pyfiglet import Figlet
 from tabulate import tabulate
 
 def main():
-    """ main function """
+    # MAIN FUNCTION
     POINT = [0, 0]
     figlet = Figlet()
     fonts = figlet.getFonts()
@@ -13,10 +13,10 @@ def main():
 
             boardgame = [" "]*10
 
-            """ ASK THE PLAYERS TO CHOOSE THEIR MARKER """
+            # ASK THE PLAYERS TO CHOOSE THEIR MARKER
             player1,player2 = player_input()
 
-            """ CHOOSE WHO GOES IN FIRST """
+            # CHOOSE WHO GOES IN FIRST
             turn = choose_first(player1)
             print("\n"+turn+" goes first")
 
@@ -29,7 +29,7 @@ def main():
                 game_on = False
 
             while game_on:
-                """ CHECK WHOSE TURN """
+                # CHECK WHOSE TURN
                 table = [["Player", "Point"]]
                 if turn == "Player 1":
                     # MOVES FOR PLAYER ONE
@@ -82,7 +82,7 @@ tablefmt="grid"))
                 print()
 
 
-            """ ASK IF THEY WANNA PLAY AGAIN """
+            # Check whether the player wants to play again
             if not replay():
                 break
 
@@ -94,7 +94,7 @@ tablefmt="grid"))
 tablefmt="grid"), "\n")
 
 def display_board(board):
-    """ display the game as a board """
+    # display the game as a board
     print('\n'*100)
     table = [[board[1], board[2], board[3]], [board[4], board[5], 
 board[6]], [board[7], board[8], board[9]]]
@@ -102,7 +102,7 @@ board[6]], [board[7], board[8], board[9]]]
     print("\n\n")
 
 def player_input():
-    """ take users input on which marker to choose """
+    # take users input on which marker to choose
     pmark = input('Choose your marker (X or O): ').upper()
     table = [["Player", "Marker"]]
     while pmark.upper() not in ('X','O'):
@@ -121,11 +121,11 @@ def player_input():
     return player1,player2
 
 def place_marker(board, marker, position):
-    """ place a marker at a position by the user """
+    # place a marker at a position by the user
     board[position] = marker
 
 def win_check(board, marker):
-    """ win_check() checks if any user wins during the game """
+    # win_check() checks if any user wins during the game
     return ((board[1]==marker and board[2]==marker and board[3]==marker) 
 or
     (board[4]==marker and board[5]==marker and board[6]==marker) or
@@ -139,7 +139,7 @@ or
 
 
 def choose_first(player1):
-    """ selects the player that chooses X as the first player """
+    # selects the player that chooses X as the first player
     if player1 == "X":
         pone = 1
     else:
@@ -147,14 +147,14 @@ def choose_first(player1):
     return f'Player {pone}'
 
 def space_check(board, position):
-    """ check if there is a space in the given position """
+    # check if there is a space in the given position
     if board[position] == " ":
         return True
     else:
         return False
 
 def full_board_check(board):
-    """ checks if the board is full to find if its a draw """
+    # checks if the board is full to find if its a draw
     countn=0
     for i in range(1,10):
         if board[i] != " ":
@@ -170,7 +170,7 @@ def marker_position(a):
     return True
 
 def player_choice(board):
-    """ enter the next user choice """
+    # enter the next user choice
     a = int(input('Enter your next position: '))
     while not marker_position(a):
         print("Invalid position entered\n")
@@ -183,7 +183,7 @@ def player_choice(board):
             a = int(input('Enter your next position: '))
 
 def replay():
-    """ ask user if they want to play again """
+    # ask user if they want to play again
     replay=input('Would you like to play again by changing the markers? (Y or N): ')
     if replay.upper() == 'Y':
         return True

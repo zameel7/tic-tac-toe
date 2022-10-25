@@ -1,5 +1,6 @@
-from tictactoe import choose_first, space_check, full_board_check, 
-marker_position
+from tictactoe import choose_first, space_check, full_board_check, marker_position
+
+# unit tests for the code implemented
 
 def test_full_board_check():
     assert full_board_check([" "]*10) == False

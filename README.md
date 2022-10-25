@@ -44,6 +44,7 @@ is filled, the game will be declared as a tie
 
 ### Unit tests
 ___________________________
+*Used to check whether all the functions in the code are working as expected* 
 
 #### test_project.py
 
