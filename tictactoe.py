@@ -20,7 +20,7 @@ def main():
             turn = choose_first(player1)
             print("\n"+turn+" goes first")
 
-            play_game = input('\nLets play game? (Y or N): ')
+            play_game = input('\nLets play the game? (Y or N): ')
 
             if play_game.upper() == 'Y':
                 game_on = True
@@ -43,12 +43,12 @@ def main():
                     if win_check(boardgame, player1):
                         display_board(boardgame)
                         POINT[0] += 1
-                        print('Player 1 has won the game!\n')
+                        print('Player 1 has WON the game!\n')
                         game_on = False
                     else:
                         if full_board_check(boardgame):
                             display_board(boardgame)
-                            print('The game has been tied!\n')
+                            print('The game is a TIE!\n')
                             game_on = False
                         else:
                             turn = 'Player 2'
@@ -65,12 +65,12 @@ def main():
                     if win_check(boardgame, player2):
                         display_board(boardgame)
                         POINT[1] += 1
-                        print('Player 2 has won the game!\n')
+                        print('Player 2 has WON the game!\n')
                         game_on = False
                     else:
                         if full_board_check(boardgame):
                             display_board(boardgame)
-                            print('The game has been tied!\n')
+                            print('The game has been TIED!\n')
                             game_on = False
                         else:
                             turn = 'Player 1'
