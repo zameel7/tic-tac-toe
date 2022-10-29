@@ -48,7 +48,7 @@ def main():
                     else:
                         if full_board_check(boardgame):
                             display_board(boardgame)
-                            print('The game is a TIE!\n')
+                            print('Well played, ended up as a tie!\n')
                             game_on = False
                         else:
                             turn = 'Player 2'
