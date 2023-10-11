@@ -41,6 +41,7 @@ is filled, the game will be declared as a tie
 
 > After each set of the game, players will be shown their points
 
+> The game ends when one player wins or it's a draw. It's a simple and strategic game enjoyed by all ages.
 
 ### Unit tests
 ___________________________
