@@ -21,12 +21,7 @@ def main():
             print("\n"+turn+" goes first")
 
             play_game = input('\nLets play the game? (Y or N): ')
-
-            if play_game.upper() == 'Y':
-                game_on = True
-
-            else:
-                game_on = False
+            game_on = play_game.upper() == 'Y'
 
             while game_on:
                 # CHECK WHOSE TURN
@@ -74,7 +69,7 @@ def main():
                             game_on = False
                         else:
                             turn = 'Player 1'
-                if game_on == False:
+                if not game_on:
                     table.append(["P1", POINT[0]])
                     table.append(["P2", POINT[1]])
                     print(tabulate(table, headers="firstrow", 
@@ -118,7 +113,7 @@ def player_input():
         player1 = 'O'
         player2 = 'X'
     print(tabulate(table, headers="firstrow", tablefmt="grid"))
-    return player1,player2
+    return player1, player2
 
 def place_marker(board, marker, position):
     # place a marker at a position by the user
@@ -140,34 +135,26 @@ or
 
 def choose_first(player1):
     # selects the player that chooses X as the first player
-    if player1 == "X":
-        pone = 1
-    else:
-        pone = 2
-    return f'Player {pone}'
+    return f"Player {1 if player1 == 'X' else 2}"
 
 def space_check(board, position):
     # check if there is a space in the given position
-    if board[position] == " ":
-        return True
-    else:
-        return False
+    return board[position] == " "
 
 def full_board_check(board):
     # checks if the board is full to find if its a draw
     countn=0
     for i in range(1,10):
-        if board[i] != " ":
-            countn+=1
-        else:
+        if board[i] == " ":
             return False
+
+        countn += 1
+
     if countn == 9:
         return True
 
 def marker_position(a):
-    while a not in range(1, 10):
-        return False
-    return True
+    return a in range(1, 10)
 
 def player_choice(board):
     # enter the next user choice
@@ -185,10 +172,7 @@ def player_choice(board):
 def replay():
     # ask user if they want to play again
     replay=input('Would you like to play again by changing the markers? (Y or N): ')
-    if replay.upper() == 'Y':
-        return True
-    else:
-        return False
+    return replay.upper() == 'Y'
 
 if __name__ == "__main__":
     main()
