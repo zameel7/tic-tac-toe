@@ -2,7 +2,7 @@
 
 #### Description:
 
-    Final project done as a part of the CS50P course at Harvard
+    Final project done as a part of the CS50P course by Harvard
 
 - Initially, to play this game, run:
 ```
